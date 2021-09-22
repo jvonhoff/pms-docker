@@ -26,5 +26,5 @@ ADD ./override_comskip.sh /etc/cont-init.d/18-override_comskip
 ADD ./add_to_hostfile.sh /etc/cont-init.d/20-add_to_hostfile
 
 RUN chmod 777 /opt/PlexComskip/comskip.sh
-RUN mkdir -p '/config/Library/Application Support/Plex Media Server/Scripts'
-RUN ln -s '/opt/PlexComskip/comskip.sh' '/config/Library/Application Support/Plex Media Server/Scripts/comskip.sh'
+RUN mkdir -p "/config/Library/Application Support/Plex Media Server/Scripts"
+RUN ln -s "/opt/PlexComskip/comskip.sh" "/config/Library/Application Support/Plex Media Server/Scripts/comskip.sh"
