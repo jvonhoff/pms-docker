@@ -5,14 +5,12 @@ RUN apt-get update && \
     apt-get install -y python3 git build-essential libargtable2-dev autoconf \
     automake libtool libtool-bin ffmpeg libsdl1.2-dev libavutil-dev \
     libavformat-dev libavcodec-dev mkvtoolnix && \
-
 cd /opt && \
 git clone git://github.com/erikkaashoek/Comskip && \
 cd Comskip && \
 ./autogen.sh && \
 ./configure && \
 make && \
-
 cd /opt && \
 git clone https://github.com/ekim1337/PlexComskip.git && \
 chmod -R 777 /opt/ /tmp/ /root/ && \
@@ -27,4 +25,3 @@ ADD ./add_to_hostfile.sh /etc/cont-init.d/20-add_to_hostfile
 
 RUN chmod 777 /opt/PlexComskip/comskip.sh
 RUN mkdir -p "/config/Library/Application Support/Plex Media Server/Scripts"
-RUN ln -s "/opt/PlexComskip/comskip.sh" "/config/Library/Application Support/Plex Media Server/Scripts/comskip.sh"
